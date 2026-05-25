@@ -1,4 +1,8 @@
 {
+	"Bruce Boards": [
+		{ "id": "reaper", "name": "Reaper RF", "family": "ESP32-C5" },
+		{ "id": "smoochiee-board", "name": "Smoochiee V2", "family": "ESP32-S3" }
+	],
 	"M5Stack": [
 		{ "id": "arduino-nesso-n1", "name": "Arduino Nesso N1", "family": "ESP32-C6" },
 		{ "id": "m5stack-cardputer", "name": "Cardputer (and Adv)", "family": "ESP32-S3" },
