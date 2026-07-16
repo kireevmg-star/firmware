@@ -1,6 +1,6 @@
 {
 	"Bruce Boards": [
-		{ "id": "reaper", "name": "Reaper RF", "family": "ESP32-C5" },
+		{ "id": "reaper", "name": "Reaper RF", "family": "ESP32-S3" },
 		{ "id": "smoochiee-board", "name": "Smoochiee V2", "family": "ESP32-S3" }
 	],
 	"M5Stack": [
