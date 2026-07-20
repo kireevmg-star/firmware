@@ -74,6 +74,31 @@
 		return null;
 	}
 
+	function getBuildPath(releaseTag, selectedDevice) {
+		// using alternative Launcher CORS proxy until Bruce's proxy doesn't get fixed
+		// Change "activated" to False to get back to original code, 
+		// keep the alternative proxy in the code, DO NOT remove!!
+		const activated = true; 
+		
+		if (activated && releaseTag === 'betaRelease') {
+			return (
+				'https://launcher-cors-proxy-99894582617.europe-west1.run.app/?url=https://github.com/BruceDevices/firmware/releases/download/' +
+				releaseTag +
+				'/Bruce-' +
+				encodeURIComponent(selectedDevice) +
+				'.bin'
+			);
+		}
+
+		return (
+			'https://bruce.iceis.co.uk/service/github/' +
+			releaseTag +
+			'/Bruce-' +
+			encodeURIComponent(selectedDevice) +
+			'.bin'
+		);
+	}
+
 	function updateManifest() {
 		if (selectedVersion && selectedDevice) {
 			const button = document.querySelector('esp-web-install-button');
@@ -94,12 +119,7 @@
 							improv: false,
 							parts: [
 								{
-									path:
-										'https://bruce.iceis.co.uk/service/github/' +
-										releaseTag +
-										'/Bruce-' +
-										encodeURIComponent(selectedDevice) +
-										'.bin',
+									path: getBuildPath(releaseTag, selectedDevice),
 									offset: 0
 								}
 							]
